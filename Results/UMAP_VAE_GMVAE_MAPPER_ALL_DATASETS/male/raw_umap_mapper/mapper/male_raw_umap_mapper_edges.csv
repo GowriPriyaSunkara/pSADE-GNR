@@ -1,0 +1,10 @@
+source,target
+cube0_cluster0,cube1_cluster0
+cube2_cluster0,cube3_cluster0
+cube2_cluster0,cube6_cluster0
+cube2_cluster0,cube7_cluster0
+cube3_cluster0,cube6_cluster0
+cube3_cluster0,cube7_cluster0
+cube6_cluster0,cube7_cluster0
+cube10_cluster0,cube17_cluster0
+cube10_cluster1,cube11_cluster0

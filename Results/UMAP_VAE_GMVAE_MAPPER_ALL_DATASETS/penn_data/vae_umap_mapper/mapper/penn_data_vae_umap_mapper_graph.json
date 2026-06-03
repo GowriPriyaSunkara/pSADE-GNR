@@ -1,0 +1,144 @@
+{
+  "nodes": {
+    "cube45_cluster0": [
+      19,
+      74,
+      79,
+      280,
+      321
+    ],
+    "cube57_cluster0": [
+      75,
+      142,
+      230,
+      416,
+      461,
+      493
+    ],
+    "cube58_cluster0": [
+      53,
+      75,
+      77,
+      142,
+      207,
+      208,
+      219,
+      230,
+      281,
+      322,
+      347,
+      416,
+      493,
+      512
+    ],
+    "cube59_cluster0": [
+      28,
+      208,
+      255,
+      281,
+      346,
+      449
+    ],
+    "cube69_cluster0": [
+      75,
+      142,
+      230,
+      416,
+      493
+    ],
+    "cube70_cluster0": [
+      75,
+      142,
+      219,
+      230,
+      416,
+      442,
+      493
+    ],
+    "cube72_cluster0": [
+      52,
+      186,
+      305,
+      339,
+      405,
+      418,
+      423,
+      447
+    ]
+  },
+  "links": {
+    "cube57_cluster0": [
+      "cube58_cluster0",
+      "cube69_cluster0",
+      "cube70_cluster0"
+    ],
+    "cube58_cluster0": [
+      "cube59_cluster0",
+      "cube69_cluster0",
+      "cube70_cluster0"
+    ],
+    "cube69_cluster0": [
+      "cube70_cluster0"
+    ]
+  },
+  "simplices": [
+    [
+      "cube45_cluster0"
+    ],
+    [
+      "cube57_cluster0"
+    ],
+    [
+      "cube58_cluster0"
+    ],
+    [
+      "cube59_cluster0"
+    ],
+    [
+      "cube69_cluster0"
+    ],
+    [
+      "cube70_cluster0"
+    ],
+    [
+      "cube72_cluster0"
+    ],
+    [
+      "cube57_cluster0",
+      "cube58_cluster0"
+    ],
+    [
+      "cube57_cluster0",
+      "cube69_cluster0"
+    ],
+    [
+      "cube57_cluster0",
+      "cube70_cluster0"
+    ],
+    [
+      "cube58_cluster0",
+      "cube59_cluster0"
+    ],
+    [
+      "cube58_cluster0",
+      "cube69_cluster0"
+    ],
+    [
+      "cube58_cluster0",
+      "cube70_cluster0"
+    ],
+    [
+      "cube69_cluster0",
+      "cube70_cluster0"
+    ]
+  ],
+  "meta_data": {
+    "projection": "custom",
+    "n_cubes": 12,
+    "perc_overlap": 0.3,
+    "clusterer": "DBSCAN(eps=0.8)",
+    "scaler": "None",
+    "nerve_min_intersection": 1
+  },
+  "meta_nodes": {}
+}
