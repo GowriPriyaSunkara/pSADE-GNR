@@ -933,7 +933,7 @@ def plot_umap_targets(umap_train: np.ndarray,
         vals = np.concatenate([Y_train[:, j], Y_val[:, j]])
         xy = np.vstack([umap_train, umap_val])
         plt.scatter(xy[:, 0], xy[:, 1], c=vals, s=18, alpha=0.8)
-        plt.colorbar(label=f"{target_name} (scaled)")
+        plt.colorbar(label=f"{target_name} ")
         plt.xlabel("UMAP 1")
         plt.ylabel("UMAP 2")
         plt.title(f"{title_prefix} - colored by {target_name}")
