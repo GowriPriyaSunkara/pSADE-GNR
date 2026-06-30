@@ -53,7 +53,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import DBSCAN
 
-import umap
+import umap.umap_ as umap
 import kmapper as km
 
 warnings.filterwarnings("ignore")
@@ -63,9 +63,9 @@ warnings.filterwarnings("ignore")
 # CONFIG
 # =========================================================
 CSV_LIST = [
-    "/scratch/gsunka1/TDA_guoji/male.csv",
-    "/scratch/gsunka1/TDA_guoji/female.csv",
-    "/scratch/gsunka1/TDA_guoji/penn_data.csv",
+    "male.csv",
+    "female.csv",
+    "penn_data.csv",
 ]
 
 RESULTS_ROOT = "UMAP_VAE_GMVAE_MAPPER_ALL_DATASETS"
@@ -87,12 +87,6 @@ UMAP_N_NEIGHBORS = 20
 UMAP_MIN_DIST = 0.10
 UMAP_METRIC = "euclidean"
 UMAP_RANDOM_STATE = SEED
-
-# Mapper
-MAPPER_N_CUBES = 12
-MAPPER_OVERLAP = 0.30
-MAPPER_DBSCAN_EPS = 0.8
-MAPPER_DBSCAN_MIN_SAMPLES = 5
 
 # VAE
 VAE_LATENT_DIM = 15
@@ -127,6 +121,39 @@ TARGET_WEIGHTS_DICT = {
     "Age": 2.0,
 }
 GMVAE_MODEL_SELECTION = "val_reg"  # or "val_total"
+ 
+# Mapper
+MAPPER_N_CUBES = 10
+MAPPER_OVERLAP = 0.01
+MAPPER_DBSCAN_EPS = 0.01
+MAPPER_DBSCAN_MIN_SAMPLES = 1
+
+# cubes = [5, 10, 15, 20]
+# overlap = [0.01, 0.1, 0.25, 0.5, 0.75]
+# eps = [0.01, 0.1, 0.25, 0.5, 0.75]
+# min_samp = [1, 3, 5, 10, 15]
+
+# c = 0
+# while c < len(cubes):
+
+#     MAPPER_N_CUBES = cubes[c]
+
+#     o = 0
+#     while o < len(overlap):
+
+#         MAPPER_OVERLAP = overlap[o]
+
+#         e = 0
+#         while e < len(eps):
+
+#             MAPPER_DBSCAN_EPS = eps[e]
+
+#             ms = 0
+#             while ms < len(min_samp):
+
+#                 MAPPER_DBSCAN_MIN_SAMPLES = min_samp[ms]
+
+
 
 
 # =========================================================
@@ -228,11 +255,11 @@ def load_dataset(csv_path: str, train_size: float = TRAIN_SIZE, seed: int = SEED
 
 
 def save_split_tables(out_dir: str,
-                      X_train: np.ndarray,
-                      X_val: np.ndarray,
-                      Y_train: np.ndarray,
-                      Y_val: np.ndarray,
-                      meta: dict):
+                    X_train: np.ndarray,
+                    X_val: np.ndarray,
+                    Y_train: np.ndarray,
+                    Y_val: np.ndarray,
+                    meta: dict):
     os.makedirs(out_dir, exist_ok=True)
 
     pd.DataFrame({"train_idx": meta["train_idx"]}).to_csv(
@@ -414,14 +441,14 @@ def train_vae_and_embed(X_train: np.ndarray, X_val: np.ndarray, out_dir: str):
     history_df.to_csv(os.path.join(out_dir, "vae_training_history.csv"), index=False)
     torch.save(model.state_dict(), os.path.join(out_dir, "vae_best.pt"))
 
-    plt.figure(figsize=(8, 5))
-    plt.plot(history_df["epoch"], history_df["train_total"], label="train_total")
-    plt.plot(history_df["epoch"], history_df["val_total"], label="val_total")
-    plt.xlabel("Epoch")
-    plt.ylabel("Loss")
-    plt.title("VAE Total Loss")
-    plt.legend()
-    save_current_figure(os.path.join(out_dir, "vae_total_loss.png"))
+    # plt.figure(figsize=(8, 5))
+    # plt.plot(history_df["epoch"], history_df["train_total"], label="train_total")
+    # plt.plot(history_df["epoch"], history_df["val_total"], label="val_total")
+    # plt.xlabel("Epoch")
+    # plt.ylabel("Loss")
+    # plt.title("VAE Total Loss")
+    # plt.legend()
+    # save_current_figure(os.path.join(out_dir, "vae_total_loss.png"))
 
     @torch.no_grad()
     def encode_np(X):
@@ -621,7 +648,7 @@ def make_target_weights(target_cols):
 
 
 def gmvae_loss(model, batch_x, batch_y=None, target_weights=None,
-               beta_kl_z=1.0, beta_kl_c=0.01):
+            beta_kl_z=1.0, beta_kl_c=0.01):
     out = model(batch_x)
 
     probs_c = out["probs_c"]
@@ -725,8 +752,8 @@ def run_gmvae_epoch(model, loader, epoch, optimizer=None, target_weights=None):
 
 
 def train_gmvae_and_embed(X_train: np.ndarray, X_val: np.ndarray,
-                          Y_train: np.ndarray, Y_val: np.ndarray,
-                          target_cols: List[str], out_dir: str):
+                        Y_train: np.ndarray, Y_val: np.ndarray,
+                        target_cols: List[str], out_dir: str):
     os.makedirs(out_dir, exist_ok=True)
 
     train_ds = XYDataset(X_train, Y_train)
@@ -877,16 +904,16 @@ def fit_umap(train_X: np.ndarray, val_X: np.ndarray):
 
 
 def save_embedding_tables(out_dir: str,
-                          base_train: np.ndarray,
-                          base_val: np.ndarray,
-                          umap_train: np.ndarray,
-                          umap_val: np.ndarray,
-                          Y_train: np.ndarray,
-                          Y_val: np.ndarray,
-                          target_cols: List[str],
-                          base_prefix: str,
-                          extra_train: Optional[dict] = None,
-                          extra_val: Optional[dict] = None):
+                        base_train: np.ndarray,
+                        base_val: np.ndarray,
+                        umap_train: np.ndarray,
+                        umap_val: np.ndarray,
+                        Y_train: np.ndarray,
+                        Y_val: np.ndarray,
+                        target_cols: List[str],
+                        base_prefix: str,
+                        extra_train: Optional[dict] = None,
+                        extra_val: Optional[dict] = None):
     os.makedirs(out_dir, exist_ok=True)
 
     np.save(os.path.join(out_dir, f"{base_prefix}_train.npy"), base_train)
@@ -920,12 +947,12 @@ def save_embedding_tables(out_dir: str,
 
 
 def plot_umap_targets(umap_train: np.ndarray,
-                      umap_val: np.ndarray,
-                      Y_train: np.ndarray,
-                      Y_val: np.ndarray,
-                      target_cols: List[str],
-                      out_dir: str,
-                      title_prefix: str):
+                    umap_val: np.ndarray,
+                    Y_train: np.ndarray,
+                    Y_val: np.ndarray,
+                    target_cols: List[str],
+                    out_dir: str,
+                    title_prefix: str):
     os.makedirs(out_dir, exist_ok=True)
 
     for j, target_name in enumerate(target_cols):
@@ -1009,7 +1036,7 @@ def save_mapper_outputs(lens_2d: np.ndarray,
     attempts_csv = os.path.join(out_dir, f"{mapper_name}_attempts.csv")
     pd.DataFrame(attempt_rows).to_csv(attempts_csv, index=False)
 
-    html_path = os.path.join(out_dir, f"{mapper_name}_mapper.html")
+    html_path = os.path.join(out_dir, f"{mapper_name}_{MAPPER_N_CUBES}_{MAPPER_OVERLAP}_{MAPPER_DBSCAN_EPS}_{MAPPER_DBSCAN_MIN_SAMPLES}_mapper.html")
     graph_json_path = os.path.join(out_dir, f"{mapper_name}_graph.json")
 
     with open(graph_json_path, "w", encoding="utf-8") as f:
