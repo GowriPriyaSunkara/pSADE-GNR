@@ -63,9 +63,9 @@ warnings.filterwarnings("ignore")
 # CONFIG
 # =========================================================
 CSV_LIST = [
-    "male.csv",
-    "female.csv",
-    "penn_data.csv",
+    "/scratch/mlemo36/TDA_folder/Penn/pLaplacian-Graph-NN/male.csv",
+    "/scratch/mlemo36/TDA_folder/Penn/pLaplacian-Graph-NN/female.csv",
+    "/scratch/mlemo36/TDA_folder/Penn/pLaplacian-Graph-NN/penn_data.csv",
 ]
 
 RESULTS_ROOT = "UMAP_VAE_GMVAE_MAPPER_ALL_DATASETS"
@@ -123,9 +123,9 @@ TARGET_WEIGHTS_DICT = {
 GMVAE_MODEL_SELECTION = "val_reg"  # or "val_total"
  
 # Mapper
-MAPPER_N_CUBES = 10
+MAPPER_N_CUBES = 5
 MAPPER_OVERLAP = 0.01
-MAPPER_DBSCAN_EPS = 0.01
+MAPPER_DBSCAN_EPS = 0.3
 MAPPER_DBSCAN_MIN_SAMPLES = 1
 
 # cubes = [5, 10, 15, 20]
