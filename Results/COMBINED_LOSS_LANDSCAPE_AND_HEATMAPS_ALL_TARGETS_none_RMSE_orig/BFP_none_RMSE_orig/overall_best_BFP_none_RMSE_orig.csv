@@ -1,0 +1,2 @@
+target,kNN_graph,edge_metrics,fw_source,K,p,mu_used,RMSE_scaled,RelRMSE_scaled_pct,RMSE_orig,RelRMSE_orig_pct,R2,best_epoch,best_lr,source_file
+BFP,25.0,l2,none,30.0,5.0,0.0017320508075688,0.219176590748658,23.64938352728908,1.9765640052583768,6.006268666532834,0.940128478058388,158,0.0099826802054872,PGNN_ALL_RESULTS_May12/penn_data_pgnn_target-BFP_l2_fw-none_80pct_knn25/bfp/results_knn25_l2_fw-none_K30_p5.0_mu0.00173.csv

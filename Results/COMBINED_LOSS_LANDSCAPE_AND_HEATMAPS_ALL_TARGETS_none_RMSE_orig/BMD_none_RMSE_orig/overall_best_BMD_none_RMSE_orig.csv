@@ -1,0 +1,2 @@
+target,kNN_graph,edge_metrics,fw_source,K,p,mu_used,RMSE_scaled,RelRMSE_scaled_pct,RMSE_orig,RelRMSE_orig_pct,R2,best_epoch,best_lr,source_file
+BMD,2.0,l2,none,200.0,100.0,7.071067811865477e-08,0.3462418454256035,37.47534172946245,0.067190127709408,6.288295754251375,0.8584076801390049,81,0.0089564767647702,PGNN_ALL_RESULTS_May12/male_pgnn_target-BMD_l2_fw-none_80pct_knn2/bmd/results_knn2_l2_fw-none_K200_p100.0_mu7.07e-08.csv

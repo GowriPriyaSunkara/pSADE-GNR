@@ -1,0 +1,33 @@
+Target: Age
+Feature-weight source: none
+Metric visualized/minimized: RMSE_orig
+
+Outputs created:
+1. Loss landscape using all K configurations.
+2. Loss landscape using best K per (p, kNN_graph).
+3. Heatmap of best metric per (p, kNN_graph).
+4. Heatmap of R2 from the best-metric row per (p, kNN_graph).
+5. Best metric for each p line plot.
+
+Interpretation:
+x-axis: p, displayed as actual p values.
+Internally, p is interpolated on log10(p).
+y-axis: kNN graph neighbors.
+color/contour value: RMSE_orig.
+The star marks the overall best configuration across all tested p, kNN_graph, and K.
+
+For the heatmap, each (p, kNN_graph) cell contains the best value after selecting the best K for that cell.
+
+Overall best result:
+target                    Age
+fw_source                none
+p                       100.0
+kNN_graph                 2.0
+K                       200.0
+mu_used                   0.0
+RMSE_orig            9.247281
+RelRMSE_orig_pct    27.716514
+R2                   0.784177
+best_epoch                148
+best_lr              0.009999
+Name: 6056, dtype: object
