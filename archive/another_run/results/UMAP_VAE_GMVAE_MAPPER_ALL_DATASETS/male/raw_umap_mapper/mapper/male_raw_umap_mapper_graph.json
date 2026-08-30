@@ -1,0 +1,154 @@
+{
+  "nodes": {
+    "cube0_cluster0": [
+      166,
+      172,
+      221
+    ],
+    "cube1_cluster0": [
+      166,
+      172,
+      221
+    ],
+    "cube2_cluster0": [
+      195,
+      205,
+      215
+    ],
+    "cube3_cluster0": [
+      195,
+      205,
+      215
+    ],
+    "cube6_cluster0": [
+      195,
+      205,
+      215
+    ],
+    "cube7_cluster0": [
+      195,
+      205,
+      215
+    ],
+    "cube10_cluster0": [
+      8,
+      33,
+      198
+    ],
+    "cube10_cluster1": [
+      20,
+      94,
+      182
+    ],
+    "cube11_cluster0": [
+      20,
+      94,
+      182
+    ],
+    "cube17_cluster0": [
+      8,
+      33,
+      198
+    ]
+  },
+  "links": {
+    "cube0_cluster0": [
+      "cube1_cluster0"
+    ],
+    "cube2_cluster0": [
+      "cube3_cluster0",
+      "cube6_cluster0",
+      "cube7_cluster0"
+    ],
+    "cube3_cluster0": [
+      "cube6_cluster0",
+      "cube7_cluster0"
+    ],
+    "cube6_cluster0": [
+      "cube7_cluster0"
+    ],
+    "cube10_cluster0": [
+      "cube17_cluster0"
+    ],
+    "cube10_cluster1": [
+      "cube11_cluster0"
+    ]
+  },
+  "simplices": [
+    [
+      "cube0_cluster0"
+    ],
+    [
+      "cube1_cluster0"
+    ],
+    [
+      "cube2_cluster0"
+    ],
+    [
+      "cube3_cluster0"
+    ],
+    [
+      "cube6_cluster0"
+    ],
+    [
+      "cube7_cluster0"
+    ],
+    [
+      "cube10_cluster0"
+    ],
+    [
+      "cube10_cluster1"
+    ],
+    [
+      "cube11_cluster0"
+    ],
+    [
+      "cube17_cluster0"
+    ],
+    [
+      "cube0_cluster0",
+      "cube1_cluster0"
+    ],
+    [
+      "cube2_cluster0",
+      "cube3_cluster0"
+    ],
+    [
+      "cube2_cluster0",
+      "cube6_cluster0"
+    ],
+    [
+      "cube2_cluster0",
+      "cube7_cluster0"
+    ],
+    [
+      "cube3_cluster0",
+      "cube6_cluster0"
+    ],
+    [
+      "cube3_cluster0",
+      "cube7_cluster0"
+    ],
+    [
+      "cube6_cluster0",
+      "cube7_cluster0"
+    ],
+    [
+      "cube10_cluster0",
+      "cube17_cluster0"
+    ],
+    [
+      "cube10_cluster1",
+      "cube11_cluster0"
+    ]
+  ],
+  "meta_data": {
+    "projection": "custom",
+    "n_cubes": 8,
+    "perc_overlap": 0.5,
+    "clusterer": "DBSCAN(eps=1.5, min_samples=3)",
+    "scaler": "None",
+    "nerve_min_intersection": 1
+  },
+  "meta_nodes": {}
+}

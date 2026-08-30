@@ -1,0 +1,2 @@
+mapper_name,n_nodes,n_edges,html_path,graph_json_path,attempts_csv,html_created,best_n_cubes,best_overlap,best_eps,best_min_samples
+female_raw_umap_mapper,0,0,UMAP_VAE_GMVAE_MAPPER_ALL_DATASETS/female/raw_umap_mapper/mapper/female_raw_umap_mapper_mapper.html,UMAP_VAE_GMVAE_MAPPER_ALL_DATASETS/female/raw_umap_mapper/mapper/female_raw_umap_mapper_graph.json,UMAP_VAE_GMVAE_MAPPER_ALL_DATASETS/female/raw_umap_mapper/mapper/female_raw_umap_mapper_attempts.csv,False,12,0.3,0.8,5

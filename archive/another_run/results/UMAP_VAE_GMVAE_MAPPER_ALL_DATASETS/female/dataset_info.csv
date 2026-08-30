@@ -1,0 +1,2 @@
+dataset,csv_path,n_total,n_train,n_val,n_features,targets,device
+female,/scratch/gsunka1/TDA_guoji/female.csv,270,216,54,43,"ALM,BMD,BFP,Age",cuda

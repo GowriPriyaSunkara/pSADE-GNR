@@ -1,0 +1,214 @@
+{
+  "nodes": {
+    "cube1_cluster0": [
+      216,
+      457,
+      474
+    ],
+    "cube10_cluster0": [
+      88,
+      94,
+      223,
+      431,
+      483
+    ],
+    "cube11_cluster0": [
+      94,
+      144,
+      223,
+      379,
+      421,
+      483
+    ],
+    "cube12_cluster0": [
+      144,
+      379,
+      421
+    ],
+    "cube18_cluster0": [
+      94,
+      223,
+      483
+    ],
+    "cube19_cluster0": [
+      94,
+      144,
+      223,
+      379,
+      421,
+      483
+    ],
+    "cube19_cluster1": [
+      186,
+      305,
+      339
+    ],
+    "cube20_cluster0": [
+      186,
+      305,
+      339
+    ],
+    "cube20_cluster1": [
+      144,
+      379,
+      421
+    ],
+    "cube27_cluster0": [
+      186,
+      305,
+      339
+    ],
+    "cube28_cluster0": [
+      186,
+      305,
+      339
+    ]
+  },
+  "links": {
+    "cube10_cluster0": [
+      "cube11_cluster0",
+      "cube18_cluster0",
+      "cube19_cluster0"
+    ],
+    "cube11_cluster0": [
+      "cube12_cluster0",
+      "cube18_cluster0",
+      "cube19_cluster0",
+      "cube20_cluster1"
+    ],
+    "cube12_cluster0": [
+      "cube19_cluster0",
+      "cube20_cluster1"
+    ],
+    "cube18_cluster0": [
+      "cube19_cluster0"
+    ],
+    "cube19_cluster0": [
+      "cube20_cluster1"
+    ],
+    "cube19_cluster1": [
+      "cube20_cluster0",
+      "cube27_cluster0",
+      "cube28_cluster0"
+    ],
+    "cube20_cluster0": [
+      "cube27_cluster0",
+      "cube28_cluster0"
+    ],
+    "cube27_cluster0": [
+      "cube28_cluster0"
+    ]
+  },
+  "simplices": [
+    [
+      "cube1_cluster0"
+    ],
+    [
+      "cube10_cluster0"
+    ],
+    [
+      "cube11_cluster0"
+    ],
+    [
+      "cube12_cluster0"
+    ],
+    [
+      "cube18_cluster0"
+    ],
+    [
+      "cube19_cluster0"
+    ],
+    [
+      "cube19_cluster1"
+    ],
+    [
+      "cube20_cluster0"
+    ],
+    [
+      "cube20_cluster1"
+    ],
+    [
+      "cube27_cluster0"
+    ],
+    [
+      "cube28_cluster0"
+    ],
+    [
+      "cube10_cluster0",
+      "cube11_cluster0"
+    ],
+    [
+      "cube10_cluster0",
+      "cube18_cluster0"
+    ],
+    [
+      "cube10_cluster0",
+      "cube19_cluster0"
+    ],
+    [
+      "cube11_cluster0",
+      "cube12_cluster0"
+    ],
+    [
+      "cube11_cluster0",
+      "cube18_cluster0"
+    ],
+    [
+      "cube11_cluster0",
+      "cube19_cluster0"
+    ],
+    [
+      "cube11_cluster0",
+      "cube20_cluster1"
+    ],
+    [
+      "cube12_cluster0",
+      "cube19_cluster0"
+    ],
+    [
+      "cube12_cluster0",
+      "cube20_cluster1"
+    ],
+    [
+      "cube18_cluster0",
+      "cube19_cluster0"
+    ],
+    [
+      "cube19_cluster0",
+      "cube20_cluster1"
+    ],
+    [
+      "cube19_cluster1",
+      "cube20_cluster0"
+    ],
+    [
+      "cube19_cluster1",
+      "cube27_cluster0"
+    ],
+    [
+      "cube19_cluster1",
+      "cube28_cluster0"
+    ],
+    [
+      "cube20_cluster0",
+      "cube27_cluster0"
+    ],
+    [
+      "cube20_cluster0",
+      "cube28_cluster0"
+    ],
+    [
+      "cube27_cluster0",
+      "cube28_cluster0"
+    ]
+  ],
+  "meta_data": {
+    "projection": "custom",
+    "n_cubes": 8,
+    "perc_overlap": 0.5,
+    "clusterer": "DBSCAN(eps=1.5, min_samples=3)",
+    "scaler": "None",
+    "nerve_min_intersection": 1
+  },
+  "meta_nodes": {}
+}
