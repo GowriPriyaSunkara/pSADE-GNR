@@ -54,7 +54,37 @@ Choose the PyTorch command appropriate for your CUDA version from the official P
 
 ## Interactive model map
 
-Open `graphify\\\_all\\\_9\\\_models.html` in a web browser to explore the relationships among the nine model scripts, graph-construction choices, representations, targets, datasets, and evaluation components.!\[Interactive Graphify map of the nine pSADE-GNR model pipelines](Results/graphify\_all\_9\_models\_image.png)
+Open `graphify\\\_all\\\_9\\\_models.html` in a web browser to explore the relationships among the nine model scripts, graph-construction choices, representations, targets, datasets, and evaluation components.## Interactive Model Graph
+
+
+
+\[Click here to open the interactive nine-model Graphify visualization](graphify\_all\_9\_models.html)
+
+\### Model architecture overview
+
+
+
+<figure>
+
+&#x20; <img
+
+&#x20;   src="Results/graphify\_all\_9\_models\_image.png"
+
+&#x20;   alt="Interactive Graphify map of the nine pSADE-GNR model pipelines"
+
+&#x20;   width="100%"
+
+&#x20; >
+
+&#x20; <figcaption>
+
+&#x20;   Figure 1. Relationships among the nine pSADE-GNR models, datasets,
+
+&#x20;   representations, graph-construction methods, targets, and evaluation components.
+
+&#x20; </figcaption>
+
+</figure>
 
 
 
