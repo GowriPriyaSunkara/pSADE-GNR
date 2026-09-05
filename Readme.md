@@ -1,22 +1,85 @@
-# pSADE-GNR+ GMVAE + VAE
+# pSADE-GNR
 
-This repository implements a graph-based machine learning pipeline for predicting body composition metrics (ALM, BMD, BFP) using anthropometric data.
+**Target-Aware State-Adaptive (p)-Dirichlet Graph Neural Regression for Non-Invasive Body-Composition Estimation**
 
-The project integrates:
+This repository contains research code for predicting body-composition outcomes from non-invasive anthropometric measurements. The project studies participant-similarity graphs built in raw, variational-autoencoder (VAE), and Gaussian-mixture variational-autoencoder (GMVAE) representation spaces, with optional target-aware correlation weighting.
 
-📊 p-Dirichlet energy-flow graph neural regression-(pSADE-GNR)
+The principal prediction targets are:
 
-🔄 Variational Autoencoders (VAE)
+* Appendicular lean mass (ALM)
+* Bone mineral density (BMD)
+* Body fat percentage (BFP)
+* Age in exploratory experiments
 
-🔀 Gaussian Mixture VAEs (GMVAE)
 
-📈 Correlation-weighted graph construction
 
-🌐 k-NN graph learning
+## Method overview
 
-📉 Regression evaluation (RMSE, MAE, R²)
+Each participant is represented as a node. A (k)-nearest-neighbor graph connects participants with similar feature profiles. A neural encoder maps the node features to hidden states, and a state-adaptive (p)-Dirichlet energy-flow layer propagates information over the graph before regression.
 
-This work explores how geometry + topology + deep learning can improve prediction of biological measurements.
+The repository compares three representation spaces:
+
+1. **Raw features** — standardized anthropometric measurements.
+2. **VAE features** — a 15-dimensional variational-autoencoder representation.
+3. **GMVAE features** — a 15-dimensional Gaussian-mixture VAE representation.
+
+For each space, the project considers ordinary Euclidean graph construction and, where implemented, target-aware correlation-weighted graph construction. Correlation weights are computed from the training fold so that validation and test targets do not enter graph construction.
+
+## Installation
+
+Python 3.10 or later is recommended. A CUDA-enabled PyTorch installation is recommended for the full hyperparameter sweeps, although the scripts can use a CPU.
+
+Create and activate an environment:
+
+
+
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+
+
+
+Install the main dependencies:
+
+
+
+pip install numpy pandas scipy scikit-learn matplotlib tqdm
+pip install torch
+pip install torch-geometric
+pip install umap-learn kmapper
+
+
+
+Choose the PyTorch command appropriate for your CUDA version from the official PyTorch installation guide when GPU support is required.
+
+## Interactive model map
+
+Open `graphify\\\_all\\\_9\\\_models.html` in a web browser to explore the relationships among the nine model scripts, graph-construction choices, representations, targets, datasets, and evaluation components.!\[Interactive Graphify map of the nine pSADE-GNR model pipelines](Results/graphify\_all\_9\_models\_image.png)
+
+
+
+## Citation
+
+If you use this repository, please cite the associated manuscript. A complete BibTeX entry will be added after publication.
+
+
+
+@misc{drenska2026targetaware,
+title         = {Target-Aware State-Adaptive {$p$}-Dirichlet Graph Neural Regression for Non-Invasive Body-Composition Estimation},
+author        = {Nadejda Drenska and Matthew Lemoine and Gowri Priya Sunkara and Yu Wang and Sri Lakshmi Sravani Devarakonda and Steven B. Heymsfield},
+year          = {2026},
+eprint        = {2608.29496},
+archivePrefix = {arXiv},
+primaryClass  = {cs.LG},
+doi           = {10.48550/arXiv.2608.29496},
+url           = {https://arxiv.org/abs/2608.29496}
+}
+
+
+
+## Status
+
+This repository contains research code under active development. Verify configurations, file paths, data permissions, and dependency versions before using it for reproducible experiments or clinical conclusions.
 
 
 
