@@ -78,16 +78,15 @@ Open `graphify\\\_all\\\_9\\\_models.html` in a web browser to explore the relat
 If you use this repository, please cite the associated manuscript. 
 
 
-
 @misc{drenska2026targetaware,
-title         = {Target-Aware State-Adaptive {$p$}-Dirichlet Graph Neural Regression for Non-Invasive Body-Composition Estimation},
-author        = {Nadejda Drenska and Matthew Lemoine and Gowri Priya Sunkara and Yu Wang and Sri Lakshmi Sravani Devarakonda and Steven B. Heymsfield},
-year          = {2026},
-eprint        = {2608.29496},
-archivePrefix = {arXiv},
-primaryClass  = {cs.LG},
-doi           = {10.48550/arXiv.2608.29496},
-url           = {https://arxiv.org/abs/2608.29496}
+  title         = {Target-Aware State-Adaptive {$p$}-Dirichlet Graph Neural Regression for Non-Invasive Body-Composition Estimation},
+  author        = {Nadejda Drenska and Matthew Lemoine and Gowri Priya Sunkara and Yu Wang and Sri Lakshmi Sravani Devarakonda and Steven B. Heymsfield},
+  year          = {2026},
+  eprint        = {2608.29496},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  doi           = {10.48550/arXiv.2608.29496},
+  url           = {https://arxiv.org/abs/2608.29496}
 }
 
 
