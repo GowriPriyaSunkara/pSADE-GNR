@@ -54,7 +54,7 @@ Choose the PyTorch command appropriate for your CUDA version from the official P
 
 ## Interactive model map
 
-Open `graphify\\\_all\\\_9\\\_models.html` in a web browser to explore the relationships among the nine model scripts, graph-construction choices, representations, targets, datasets, and evaluation components.
+Open `graphify_all_9_models.html` in a web browser to explore the relationships among the nine model scripts, graph-construction choices, representations, targets, datasets, and evaluation components.
 
 
 
