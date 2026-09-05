@@ -58,29 +58,24 @@ Open `graphify\\\_all\\\_9\\\_models.html` in a web browser to explore the relat
 
 
 
-\## Interactive model map
+## Interactive model map
+
+[Click here to open the interactive nine-model Graphify visualization](graphify_all_9_models.html).
+
+### Model architecture overview
+
+![Interactive Graphify map of the nine pSADE-GNR model pipelines](Results/graphify_all_9_models_image.png)
+
+*Figure 1. Relationships among the nine pSADE-GNR models, datasets, representations, graph-construction methods, targets, and evaluation components.*
 
 
 
-\[Click here to open the interactive nine-model Graphify visualization](graphify\_all\_9\_models.html)
-
-
-
-\### Model architecture overview
-
-
-
-!\[Interactive Graphify map of the nine pSADE-GNR model pipelines](Results/graphify\_all\_9\_models\_image.png)
-
-
-
-\*Figure 1. Relationships among the nine pSADE-GNR models, datasets, representations, graph-construction methods, targets, and evaluation components.\*
 
 
 
 ## Citation
 
-If you use this repository, please cite the associated manuscript. A complete BibTeX entry will be added after publication.
+If you use this repository, please cite the associated manuscript. 
 
 
 
