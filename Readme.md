@@ -23,8 +23,9 @@ The repository compares three representation spaces:
 2. **VAE features** — a 15-dimensional variational-autoencoder representation.
 3. **GMVAE features** — a 15-dimensional Gaussian-mixture VAE representation.
 
-For each space, the project considers ordinary Euclidean graph construction and, where implemented, target-aware correlation-weighted graph construction. Correlation weights are computed from the training fold so that validation and test targets do not enter graph construction.
+For each space, the project considers ordinary Euclidean graph construction and, where implemented, target-aware correlation-weighted graph construction. 
 
+## Implemented models
 
 | No. | Model | Representation | Graph distance | Propagation |
 |---:|---|---|---|---|
