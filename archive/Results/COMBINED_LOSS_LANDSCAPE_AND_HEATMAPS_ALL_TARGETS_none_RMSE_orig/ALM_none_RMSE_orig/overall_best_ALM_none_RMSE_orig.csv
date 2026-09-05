@@ -1,2 +1,0 @@
-target,kNN_graph,edge_metrics,fw_source,K,p,mu_used,RMSE_scaled,RelRMSE_scaled_pct,RMSE_orig,RelRMSE_orig_pct,R2,best_epoch,best_lr,source_file
-ALM,25.0,l2,none,10.0,2.0,0.02,0.1686273555506397,18.849546231003192,0.7292355076142446,4.64688111731939,0.9633204638568038,159,0.0099780966452971,PGNN_ALL_RESULTS_May12/female_pgnn_target-ALM_l2_fw-none_80pct_knn25/alm/results_knn25_l2_fw-none_K10_p2.0_mu0.02.csv

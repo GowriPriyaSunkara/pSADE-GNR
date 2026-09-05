@@ -1,2 +1,0 @@
-cluster,n_subjects,umap_1_center,umap_2_center,BFP_scaled_mean,BFP_scaled_std,BFP_scaled_min,BFP_scaled_max,label_x,label_y,BFP_level,BFP_profile
-1,270,7.592148780822754,9.059419631958008,-0.008500117212413569,0.9970237695065531,-2.6372335961468716,2.7828542181770226,7.592148780822754,9.059419631958008,Medium,Medium BFP

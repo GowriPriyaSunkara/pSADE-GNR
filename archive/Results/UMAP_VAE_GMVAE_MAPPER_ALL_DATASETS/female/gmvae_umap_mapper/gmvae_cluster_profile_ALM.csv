@@ -1,2 +1,0 @@
-cluster,n_subjects,umap_1_center,umap_2_center,ALM_scaled_mean,ALM_scaled_std,ALM_scaled_min,ALM_scaled_max,label_x,label_y,ALM_level,ALM_profile
-1,270,7.592148780822754,9.059419631958008,-0.031666832389130505,0.9811335350933476,-2.5225340486311043,2.2872274306753617,7.592148780822754,9.059419631958008,Medium,Medium ALM

@@ -1,2 +1,0 @@
-cluster,n_subjects,umap_1_center,umap_2_center,BMD_scaled_mean,BMD_scaled_std,BMD_scaled_min,BMD_scaled_max,label_x,label_y,BMD_level,BMD_profile
-1,270,7.592148780822754,9.059419631958008,-0.015046326083131735,0.9900969696172748,-2.588928490091263,2.3206556973749937,7.592148780822754,9.059419631958008,Medium,Medium BMD

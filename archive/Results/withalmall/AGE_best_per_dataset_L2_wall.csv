@@ -1,4 +1,0 @@
-Task,Dataset,fw_source,p,Best_K,Best_mu,kNN_graph,edge_metrics,RelRMSE_orig_pct,R2,best_epoch,best_lr,source_file
-AGE,female_80pct,none,10.0,40,5e-05,25,l2,36.95176544761203,0.5918302314570956,103,0.0027108737138981,/scratch/gsunka1/TDA_guoji/PGNN_ageonly_mar28/female_pgnn_target-AGE_l2_fw-none_80pct_knn25/age/results_knn25_l2_fw-none_K40_p10.0_mu5e-05.csv
-AGE,male_80pct,none,10.0,40,5e-05,35,l2,31.239653224226696,0.725822061635305,125,0.0037688457267425,/scratch/gsunka1/TDA_guoji/PGNN_ageonly_mar28/male_pgnn_target-AGE_l2_fw-none_80pct_knn35/age/results_knn35_l2_fw-none_K40_p10.0_mu5e-05.csv
-AGE,penn_data_80pct,none,100.0,100,1.0000000000000001e-07,20,l2,34.206022084703115,0.6641808983417166,124,0.0037188468879544,/scratch/gsunka1/TDA_guoji/PGNN_ageonly_mar28/penn_data_pgnn_target-AGE_l2_fw-none_80pct_knn20/age/results_knn20_l2_fw-none_K100_p100.0_mu1e-07.csv

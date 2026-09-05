@@ -1,2 +1,0 @@
-dataset,csv_path,n_total,n_train,n_val,n_features,targets,device
-penn_data,/scratch/gsunka1/TDA_guoji/penn_data.csv,515,412,103,43,"ALM,BMD,BFP,Age",cuda
