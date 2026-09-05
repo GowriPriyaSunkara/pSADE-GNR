@@ -25,6 +25,19 @@ The repository compares three representation spaces:
 
 For each space, the project considers ordinary Euclidean graph construction and, where implemented, target-aware correlation-weighted graph construction. Correlation weights are computed from the training fold so that validation and test targets do not enter graph construction.
 
+
+| No. | Model | Representation | Graph distance | Propagation |
+|---:|---|---|---|---|
+| 1 | \(L^2\)-\(p\)SADE-GNR | Raw features | Euclidean | State-adaptive \(p\)-Dirichlet flow |
+| 2 | cc-\(L^2\)-\(p\)SADE-GNR | Raw features | Correlation-weighted Euclidean | State-adaptive \(p\)-Dirichlet flow |
+| 3 | VAE-\(L^2\)-\(p\)SADE-GNR | VAE latent space | Euclidean | State-adaptive \(p\)-Dirichlet flow |
+| 4 | VAE-cc-\(L^2\)-\(p\)SADE-GNR | VAE latent space | Correlation-weighted Euclidean | State-adaptive \(p\)-Dirichlet flow |
+| 5 | GMVAE-\(L^2\)-\(p\)SADE-GNR | GMVAE latent space | Euclidean | State-adaptive \(p\)-Dirichlet flow |
+| 6 | GMVAE-cc-\(L^2\)-\(p\)SADE-GNR | GMVAE latent space | Correlation-weighted Euclidean | State-adaptive \(p\)-Dirichlet flow |
+| 7 | Vanilla GMVAE-\(p\)SADE-GNR | GMVAE latent space | Euclidean | State-adaptive \(p\)-Dirichlet flow |
+| 8 | Original \(p\)GNN—Primary | Raw features | Euclidean with exponential edge weights | Original `pGNNConv` |
+| 9 | Original \(p\)GNN—Age | Raw features | Euclidean with exponential edge weights | Original `pGNNConv` |
+
 ## Installation
 
 Python 3.10 or later is recommended. A CUDA-enabled PyTorch installation is recommended for the full hyperparameter sweeps, although the scripts can use a CPU.
