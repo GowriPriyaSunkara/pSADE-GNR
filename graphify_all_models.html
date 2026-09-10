@@ -28,11 +28,66 @@ buildLegend();document.getElementById('stats').innerHTML=`${RAW_NODES.length} no
 function toggleTheme(){
   const light=document.body.classList.toggle('light');
   document.getElementById('theme-btn').textContent=light?'Dark mode':'Light mode';
-  network.setOptions({edges:{color:{color:light?'#8792a6':'#555577',highlight:light?'#111827':'#ffffff'},font:{color:light?'#374151':'#888888'}}});
+
+  // Every node contains individual font settings, so update every node directly.
+  nodes.update(RAW_NODES.map(n=>({
+    id:n.id,
+    font:{
+      ...n.font,
+      color:light?'#172033':'#ffffff',
+      strokeWidth:light?3:0,
+      strokeColor:light?'#ffffff':'transparent'
+    },
+    color:{
+      ...n.color,
+      highlight:{
+        background:light?'#e8edf5':'#252545',
+        border:n.color.border
+      }
+    }
+  })));
+
+  // Every edge also contains individual color settings, so update every edge directly.
+  edges.update(RAW_EDGES.map((e,i)=>({
+    id:i,
+    color:{
+      color:light?'#5f6b7a':'#555770',
+      highlight:light?'#111827':'#d9d9e8',
+      hover:light?'#374151':'#a5a7c0',
+      opacity:1
+    },
+    width:light?1.6:1.2
+  })));
+
   network.redraw();
 }
 function saveBlob(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1000);}
 function downloadJSON(){saveBlob(new Blob([JSON.stringify({directed:true,multigraph:false,nodes:RAW_NODES,links:RAW_EDGES,communities:COMMUNITIES},null,2)],{type:'application/json'}),'graphify_all_9_models_datasets_v2.json');}
-function downloadPNG(){network.fit({animation:false});setTimeout(()=>{const c=document.querySelector('#graph canvas');if(!c){alert('Graph canvas is not ready.');return;}c.toBlob(b=>b&&saveBlob(b,'graphify_all_9_models_datasets_v2.png'),'image/png');},180);}
+function downloadPNG(){
+  network.fit({animation:false});
+  setTimeout(()=>{
+    const source=document.querySelector('#graph canvas');
+    if(!source){
+      alert('Graph canvas is not ready.');
+      return;
+    }
+
+    // Export the active theme background instead of a transparent canvas.
+    const exportCanvas=document.createElement('canvas');
+    exportCanvas.width=source.width;
+    exportCanvas.height=source.height;
+    const ctx=exportCanvas.getContext('2d');
+    const light=document.body.classList.contains('light');
+    ctx.fillStyle=light?'#f5f7fb':'#0f0f1a';
+    ctx.fillRect(0,0,exportCanvas.width,exportCanvas.height);
+    ctx.drawImage(source,0,0);
+
+    const theme=light?'light':'dark';
+    exportCanvas.toBlob(
+      blob=>blob&&saveBlob(blob,`graphify_all_9_models_datasets_v2_${theme}.png`),
+      'image/png'
+    );
+  },180);
+}
 
 </script></body></html>
