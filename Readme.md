@@ -74,7 +74,7 @@ Open `graphify_all_9_models.html` in a web browser to explore the relationships 
 
 ## Interactive model map
 
-[Click here to open the interactive nine-model Graphify visualization](graphify_all_9_models.html).
+[Click here to open the interactive nine-model Graphify visualization](graphify_all_models.html).
 
 ### Model architecture overview
 
